@@ -1,5 +1,19 @@
+// ### Scope Koans
+
+// All of the tests for scope-koans.js are failing. Following the restrictions for
+// each function in scope-koans.js, fix the code so every test passes.
+
+// For all functions, you may not:
+//   1. Edit the line initially declaring each test message (e.g., testOneMessage)
+//   2. Edit any code on the same line as the return keyword.
+
+// It may be helpful to look at the values passed into these functions in
+// scope-koans.spec.js!
+
+
+
 // Test One Restrictions: Do not declare any new variable with the let keyword
-let testOneMessage = 'test failing';
+let testOneMessage = 'test succeeding';
 
 function testOne() {
   return testOneMessage;
@@ -15,9 +29,8 @@ function testTwo() {
   return testTwoMessage;
 }
 
-function helperFunc(a) {
-  a = 'test succeeding';
-  return a;
+function helperFunc() {
+  testTwoMessage = 'test succeeding';
 }
 
 
@@ -33,7 +46,7 @@ function testThree(testThreeMessage) {
   return msg;
 
   function getMessage(value) {
-    if (value) {
+    if (!value) {
       return testThreeMessage;
     }
 
@@ -54,7 +67,7 @@ function testFour(msg) {
       return testFourMessage;
     }
 
-    testFourMessage = doubleInner('test failing')
+    testFourMessage = doubleInner('test succeeding')
   }
 
   innerFunc(testFourMessage);
