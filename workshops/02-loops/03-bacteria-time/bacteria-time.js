@@ -7,7 +7,7 @@ function bacteriaTime(currentNum, targetNum){
             counter++;
         }
     }else{
-        return console.log("targetNum must be larger than currentNum");
+        return ("targetNum must be larger than currentNum");
     }
     return counter * 20;
 }
