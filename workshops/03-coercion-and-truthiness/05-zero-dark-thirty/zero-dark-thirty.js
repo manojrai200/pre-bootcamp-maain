@@ -20,19 +20,17 @@
 // YOUR CODE BELOW
 
 function zeroDarkThirty(num){
-    debugger;
-    let newNum = 0;
-    let len = num.toString().length;
-    for(i = 0; i <= len; i++){
-        if (num % 10 === 0){
-            continue;
-        }else{
-            newNum = newNum + ((num % 10) * (10 ** i));
+    if (num === 0){
+        return NaN;
+    }else{
+        let numString = num.toString()
+        let result = '';
+        for (let i = 0; i < numString.length; i++) {
+            if (numString[i] !== '0') {
+                result += numString[i];
+            }
         }
-        
+        return Number(result);          
     }
-
-    return newNum;
+    
 }
-
-zeroDarkThirty(100);

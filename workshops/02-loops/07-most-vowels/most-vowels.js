@@ -15,13 +15,25 @@
 
 
 
-// YOUR CODE BELOW
 function mostVowels(string){
-   const words = string.split(' ');
-   for(i = 0; i < words.length; i++){
-    for(k = 0; k < words[i].length; k++){
-        if
+    let words = string.replace(/[.,!?]/g, '').split(' ');
+    let maxCount = 0;
+    let wordWithMostVowels = '';
+    const vowels = 'aeiouAEIOU';
+   for(let i = 0; i < words.length; i++){
+    let count = 0;
+    for(let k = 0; k < words[i].length; k++){
+        if(vowels.includes(words[i][k])){
+            count++;
+        }
+    }
+
+    if(count > maxCount){
+        maxCount = count;
+        wordWithMostVowels = words[i];
     }
    }
-
+return wordWithMostVowels;   
 }
+
+console.log(mostVowels('Give her hell from us, Peeves.'))
