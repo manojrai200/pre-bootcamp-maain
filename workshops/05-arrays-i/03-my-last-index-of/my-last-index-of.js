@@ -34,13 +34,22 @@
 // // YOUR CODE BELOW
 
 function myLastIndexOf(array, seachValue, startIdx = 0){
-    for(let i = array.length - 1; i >= 0; i--){
-        if (array[i] === seachValue){
-            return i;
-        }    
+    if(startIdx === 0){
+        for(let i = array.length - 1; i > startIdx; i--){
+            if (array[i] === seachValue){
+                return i;
+            }    
+        }
+    }else {
+        for(let i = startIdx; i < array.length - 1; i++){
+            if(array[i] === seachValue){
+                return i - startIdx;
+            }
+        }
     }
+
 
     return -1;
 }
 
-console.log(myLastIndexOf(['gee', 'gee', 'gee', 'gee', 'baby', 'baby'], 'gee'))
+console.log(myLastIndexOf([0, 10, 20, 10, 0], 10, 2))
