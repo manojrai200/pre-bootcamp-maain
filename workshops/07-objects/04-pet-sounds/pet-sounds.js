@@ -36,5 +36,18 @@ let animalNoises = [
     }
   }
 ];
-
 // YOUR CODE BELOW
+
+function petSounds(animal, country) {
+  let animalName = animal[0].toUpperCase() + animal.slice(1) + 's';
+  for(let i = 0; i < animalNoises.length; i++){
+    let animalData = animalNoises[i];
+    if(animalData[animal]){
+      return animalName + ' in ' + country + ' say ' + animalData[animal][country];
+    }
+    }
+  }
+
+
+
+console.log(petSounds('chicken', 'Uruguay'));
