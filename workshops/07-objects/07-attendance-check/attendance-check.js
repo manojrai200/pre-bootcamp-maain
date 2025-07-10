@@ -38,3 +38,25 @@ let classRoom = [
 ];
 
 // YOUR CODE BELOW
+function attendanceCheck(day) {
+
+    debugger;
+    let present = [];
+
+    for (let i = 0; i < classRoom.length; i++) {
+        let studentObj = classRoom[i];
+        let name = Object.keys(studentObj)[0];
+        let attendance = studentObj[name];
+                for (let j = 0; j < attendance.length; j++) {
+                    if (attendance[j][day] === true) {
+                        present.push(name);
+                        break;
+                    }
+    }
+  }
+
+  return present;
+}
+
+
+console.log(attendanceCheck('Friday'));
