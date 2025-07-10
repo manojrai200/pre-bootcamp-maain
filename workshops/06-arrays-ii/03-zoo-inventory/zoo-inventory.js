@@ -24,6 +24,8 @@
 // // YOUR CODE BELOW
 
 function zooInventory(array){
+
+    debugger;
     let result = ['', ''];
 
     for(let i = 0; i < array.length; i++){
