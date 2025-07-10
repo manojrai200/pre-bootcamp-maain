@@ -6,7 +6,7 @@ function compareObjects(o1, o2) {
   if (keys1.length !== keys2.length){
     return false;}
 
- for(let keys of keys1){
+ for(let keys in keys1){
     if(o1[keys] !== o2[keys]){
         return false;
     }
