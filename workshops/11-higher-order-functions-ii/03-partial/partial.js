@@ -9,7 +9,7 @@ function partial(callBack, a){
 
     return function(b){
 
-        return add(a, b);
+        return callBack(a, b);
     }
 }
 
